@@ -1,0 +1,68 @@
+
+#gallery{
+    width:800px; /*change this*/
+}
+#imageareaContent img{
+    width:770px; /*change this*/
+}
+
+
+#scrollGalleryHead{
+/*has to be postion:relativ*/
+	margin:0px;
+	padding:10px;
+	margin-top:50px;
+    background-color:#333333;
+}
+
+#scrollGalleryFoot{
+/*has to be postion:relativ*/
+	margin:0px;
+	padding:10px;
+	margin-top:5px;
+    background-color:#333333;
+}
+
+
+#thumbarea{
+	overflow: auto; 
+	overflow-y: hidden; 
+	overflow-x: auto;
+	width:100%; 
+	margin:0px; 
+	padding:0px;
+}
+#thumbareaContent{
+	padding-left:0px; 
+	padding-right:0px; 
+	margin:0px; 
+ 	white-space: nowrap;       /* important */	
+    margin-bottom:-5px;
+}
+#thumbareaContent img{
+    margin:0px;
+	margin-right:15px;
+	cursor:pointer;
+    border: 3px solid #ffffff;
+}
+#imagearea{
+	overflow: auto; 
+	overflow-y: hidden; 
+	overflow-x: auto;
+	width:100%; 
+	margin:0px; 
+	padding:0px;
+}
+#imageareaContent{
+	padding-left:0px; 
+	padding-right:0px; 
+	margin:0px; 
+ 	white-space: nowrap;       /* important */
+    margin-bottom:-5px;
+}
+#imageareaContent img{
+    margin:0px;
+	margin-right:15px;
+	cursor:pointer;
+    border: 3px solid #ffffff;
+}
