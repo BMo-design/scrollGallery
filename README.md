@@ -19,10 +19,11 @@ Get started by copy this in your head :
 
 
 
-Use this structure in the body:
- #HTML
- <div id="gallery">
-         <div id="scrollGalleryHead">		
+Use this structure in the body :
+
+#HTML
+<div id="gallery">
+       <div id="scrollGalleryHead">		
 		<div id="thumbarea">
 			<div id="thumbareaContent">
                             <img  src="fotos/image1.jpg" width="120" height="80" alt="" />
