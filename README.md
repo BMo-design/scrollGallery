@@ -20,9 +20,8 @@ Get started by copy this in your head :
 
 
 Use this structure in the body :
-
 #HTML
-<div id="gallery">
+'<div id="gallery">
        <div id="scrollGalleryHead">		
 		<div id="thumbarea">
 			<div id="thumbareaContent">
@@ -43,7 +42,7 @@ Use this structure in the body :
                      </div> 
 		</div> 
 	</div>
- </div>
+ </div>'
 
 
   
