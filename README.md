@@ -3,13 +3,13 @@ scrollGallery
 
 Awesome free JavaScript gallery with mootools. The gallery scrolling the pictures horizontally. Test it. The gallery can be easily integrated.
 
-
 ![Screenshot](http://software.BMo-design.de/images/scrollGallery.png)
 
-How to use
+How to Use
 ----------
 
 Get started by copy this in your head :
+
     #JS
     <script type="text/javascript">
     window.addEvent('domready', function() {
@@ -20,8 +20,9 @@ Get started by copy this in your head :
 
 
 Use this structure in the body :
-#HTML
-'<div id="gallery">
+
+    #HTML
+    <div id="gallery">
        <div id="scrollGalleryHead">		
 		<div id="thumbarea">
 			<div id="thumbareaContent">
@@ -42,22 +43,22 @@ Use this structure in the body :
                      </div> 
 		</div> 
 	</div>
- </div>'
+     </div>
 
 
   
 Syntax
-------
+----------
 
   new scrollGallery([options])
   
 Arguments
----------
+----------
 
 - no Arguments
 
 Options
--------
+----------
 
 * regExpClassname: (regexp) To change the CSS class name, for example /^ajaxForm/i  -> class='ajaxForm'	
 * responseClass: (String) CSS class name for the response 
@@ -70,10 +71,10 @@ Options
 * 'speed': (number) thumb scroll speed
 
 Events
-------
+----------
 
 - no Events
 
 Contact
------------
+----------
 Please contact me (info@BMo-design.de) if you have any suggestions or comments.
