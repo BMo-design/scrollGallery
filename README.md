@@ -45,7 +45,7 @@ Use this structure in the body :
 	</div>
      </div>
 
-
+In this version it is important that the thumbs and the images have the same src! 
   
 Syntax
 ----------
@@ -59,10 +59,6 @@ Arguments
 
 Options
 ----------
-
-* regExpClassname: (regexp) To change the CSS class name, for example /^ajaxForm/i  -> class='ajaxForm'	
-* responseClass: (String) CSS class name for the response 
-* loadingClass: (String) CSS class name for the loading animation
 
 * 'start': (number) start at Picture ...
 * 'notScrollWidth': (number) width of the area to select thumbs without scrolling
