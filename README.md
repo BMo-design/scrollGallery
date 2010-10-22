@@ -26,9 +26,9 @@ Use this structure in the body :
        <div id="scrollGalleryHead">		
 		<div id="thumbarea">
 			<div id="thumbareaContent">
-                            <img  src="fotos/image1.jpg" width="120" height="80" alt="" />
-                            <img  src="fotos/image2.jpg" width="120" height="80" alt="" />
-                            <img  src="fotos/image3.jpg" width="120" height="80" alt="" />
+                            <img  src="fotos/small_image1.jpg" width="120" height="80" alt="" />
+                            <img  src="fotos/small_image2.jpg" width="120" height="80" alt="" />
+                            <img  src="fotos/small_image3.jpg" width="120" height="80" alt="" />
 				...
                      </div> 
 		</div> 
@@ -36,16 +36,16 @@ Use this structure in the body :
 	 <div id="scrollGalleryFoot">
 		<div id="imagearea">
 			<div id="imageareaContent">
-                            <img  src="fotos/image1.jpg"  />
-                            <img  src="fotos/image2.jpg"  />
-                            <img  src="fotos/image3.jpg"  />
+                            <img  src="fotos/image1.jpg" alt="" />
+                            <img  src="fotos/image2.jpg" alt="" />
+                            <img  src="fotos/image3.jpg" alt="" />
    				...
                      </div> 
 		</div> 
 	</div>
      </div>
 
-In this version it is important that the thumbs and the images have the same src! 
+It is important, that you have the same number of images in thumbareaContent and imageareaContent.
   
 Syntax
 ----------
@@ -61,10 +61,10 @@ Options
 ----------
 
 * 'start': (number) start at Picture ...
-* 'notScrollWidth': (number) width of the area to select thumbs without scrolling
+* 'area': (number) width of the area to scroll left or right 
 * 'thumbarea': (string) div id name for the thumbs
 * 'imagearea': (string) div id name for the images 
-* 'speed': (number) thumb scroll speed
+* 'speed': (number) 0<=speed<=1 thumb scroll speed
 
 Events
 ----------

@@ -40,8 +40,9 @@
     margin-bottom:-5px;
 }
 #thumbareaContent img{
+	padding:0px;
     margin:0px;
-	margin-right:15px;
+	margin-right:8px;
 	cursor:pointer;
     border: 3px solid #ffffff;
 }
