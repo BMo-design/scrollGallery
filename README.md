@@ -3,7 +3,7 @@ scrollGallery
 
 Awesome free JavaScript gallery with mootools. The gallery scrolling the pictures horizontally. Test it. The gallery can be easily integrated.
 
-![Screenshot](http://software.BMo-design.de/images/scrollGallery.png)
+![Screenshot](http://software.bmo-design.de/demo/images/scrollGallery.png)
 
 How to Use
 ----------
