@@ -8,10 +8,9 @@ authors:
 license:
 - MIT-style license
 
-requires: 
-- core/1.2.4: '*'
-- more/1.2.4: 'Fx.Scroll'
-- Scroller.js by Valerio Proietti
+requires:
+- core/1.3.1: '*'
+- more/1.3.1: 'Fx.Scroll, Scroller'
 
 provides: [scrollGallery]
 
@@ -48,17 +47,17 @@ var scrollGallery = new Class({
         //init Thumb-Images
 		if($(this.options.thumbarea)){
 			this.scrollthumbareaFx = new Scroller($(this.options.thumbarea), {area: this.options.area, velocity: this.options.speed, direction: "x"});
-			//$(this.options.thumbarea).setStyle('overflow', 'hidden');
 			$(this.options.thumbarea).setStyle('overflow-x', 'hidden')
 			// Thumb Events
 			$(this.options.thumbarea).addEvent('mouseenter', this.scrollthumbareaFx.start.bind(this.scrollthumbareaFx));
 			$(this.options.thumbarea).addEvent('mouseleave', this.scrollthumbareaFx.stop.bind(this.scrollthumbareaFx));
+
 			// init tumbObjs
 			this.tumbObjs = $(this.options.thumbarea).getElements('img');
-			$each(this.tumbObjs, function(imgObjekt, index){
+			Array.each(this.tumbObjs, function(imgObjekt, index){
 				imgObjekt.addEvent('click', function(index){	
 					this.scrollimageareaFx.toElement(this.imgObjs[index]);
-				}.bind(this,index));
+				}.bind(this).pass(index));
 			
 				if(index==this.options.start){
                     imgObjekt.fireEvent('click',this,10);//delay for safari
