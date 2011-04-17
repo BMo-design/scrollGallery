@@ -30,7 +30,7 @@ var scrollGallery = new Class({
         /* Events...*/
 	},
   
-	initialize: function(element,options){
+	initialize: function(options){
 		this.setOptions(options);		
 		Scroller.implement(new Events, new Options);
 		

@@ -46,6 +46,7 @@ Use this structure in the body :
      </div>
 
 It is important, that you have the same number of images in thumbareaContent and imageareaContent.
+Current, it only works with images in landscape mode. If you want to use pictures in portrait mode, you can use a landscape png with transparent background.
   
 Syntax
 ----------
@@ -65,6 +66,18 @@ Options
 * 'thumbarea': (string) div id name for the thumbs
 * 'imagearea': (string) div id name for the images 
 * 'speed': (number) 0<=speed<=1 thumb scroll speed
+
+e.g.
+
+	#JS
+	<script type="text/javascript">
+		window.addEvent('domready', function() {
+    		var myscrollGallery = new scrollGallery({
+				start:0,
+				speed:0,5
+			});
+		});
+	</script>
 
 Events
 ----------
