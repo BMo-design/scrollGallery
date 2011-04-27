@@ -11,6 +11,11 @@ How to Use
 Get started by copy this in your head :
 
     #JS
+    <link rel="stylesheet" href="yourGalleryStyle.css" type="text/css" />
+    <script type="text/javascript" src="mootools-core-1.3.1-full-nocompat.js"></script>
+    <script type="text/javascript" src="mootools-1.3.1.1-more.js"></script>
+    <script type="text/javascript" src="scrollGallery.js"></script>
+    
     <script type="text/javascript">
     window.addEvent('domready', function() {
         var myscrollGallery = new scrollGallery();
