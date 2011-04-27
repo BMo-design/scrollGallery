@@ -74,7 +74,7 @@ e.g.
 		window.addEvent('domready', function() {
     		var myscrollGallery = new scrollGallery({
 				start:0,
-				speed:0,5
+				speed:0.5
 			});
 		});
 	</script>
