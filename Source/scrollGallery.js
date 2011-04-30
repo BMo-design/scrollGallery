@@ -26,7 +26,8 @@ var scrollGallery = new Class({
         'area': 200,
 		'thumbarea': 'thumbarea',
 		'imagearea': 'imagearea',
-		'speed': 0.1
+		'speed': 0.1,
+		'autoScroll': false
         /* Events...*/
 	},
   
@@ -36,22 +37,12 @@ var scrollGallery = new Class({
 		
 		this.tumbObjs=null;
 		this.imgObjs=null;
-		
+				
 		//FX
-		this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea, {
-			offset: {
-				'x': 0,
-				'y': 0
-			} 
-		});
+		this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea);
+		//AutoScroll
         //init Thumb-Images
 		if($(this.options.thumbarea)){
-			this.scrollthumbareaFx = new Scroller($(this.options.thumbarea), {area: this.options.area, velocity: this.options.speed, direction: "x"});
-			$(this.options.thumbarea).setStyle('overflow-x', 'hidden')
-			// Thumb Events
-			$(this.options.thumbarea).addEvent('mouseenter', this.scrollthumbareaFx.start.bind(this.scrollthumbareaFx));
-			$(this.options.thumbarea).addEvent('mouseleave', this.scrollthumbareaFx.stop.bind(this.scrollthumbareaFx));
-
 			// init tumbObjs
 			this.tumbObjs = $(this.options.thumbarea).getElements('img');
 			Array.each(this.tumbObjs, function(imgObjekt, index){
@@ -63,6 +54,34 @@ var scrollGallery = new Class({
                     imgObjekt.fireEvent('click',this,10);//delay for safari
                 }
 			}.bind(this));
+			
+			//scrollEvents
+			if(this.options.autoScroll==false){
+				this.scrollthumbareaFx = new Scroller($(this.options.thumbarea), {area: this.options.area, velocity: this.options.speed, direction: "x"});
+				$(this.options.thumbarea).setStyle('overflow-x', 'hidden');
+				// Thumb Events
+				$(this.options.thumbarea).addEvent('mouseenter', this.scrollthumbareaFx.start.bind(this.scrollthumbareaFx));
+				$(this.options.thumbarea).addEvent('mouseleave', this.scrollthumbareaFx.stop.bind(this.scrollthumbareaFx));
+			}else{
+				$(this.options.thumbarea).setStyle('overflow-x', 'hidden');
+				var scrollSize = $(this.options.thumbarea).getScrollSize();
+				var scrollTo = scrollSize.x;
+				var firstImage =  this.tumbObjs[0];
+				Array.each(this.tumbObjs, function(imgObjekt, index){
+					firstImage.getParent().adopt(imgObjekt.clone().cloneEvents(imgObjekt));
+				});
+	
+				this.scrollthumbareaFx = new Fx.Scroll(this.options.thumbarea,{
+					'duration': 300*this.options.speed*scrollSize.x/2,
+					'transition': Fx.Transitions.linear, 
+					onComplete: function(){
+				       	this.scrollthumbareaFx.set(0,0);
+						this.scrollthumbareaFx.start(scrollTo,'x');
+				    }.bind(this)
+				});
+				this.scrollthumbareaFx.set(0,0);
+				this.scrollthumbareaFx.start(scrollTo,'x');			
+			}
 		}else{
 			alert('Missing thumbarea');
 		}
@@ -75,11 +94,8 @@ var scrollGallery = new Class({
         }else{
 			alert('Missing imagearea');
 		}
-		
-		
+
 		//check
 		if(this.imgObjs.length!=this.tumbObjs.length) alert("Error: The number of images do not match!");
 	}
-    
 });
-

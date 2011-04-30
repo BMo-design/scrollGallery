@@ -52,7 +52,9 @@ Use this structure in the body :
 
 It is important, that you have the same number of images in thumbareaContent and imageareaContent.
 Current, it only works with images in landscape mode. If you want to use pictures in portrait mode, you can use a landscape png with transparent background.
-  
+
+New feature!!! AUTO SCROLL, now you can set the option 'autoScroll':true and the thumbs will scroll automatically.
+ 
 Syntax
 ----------
 
@@ -71,6 +73,7 @@ Options
 * 'thumbarea': (string) div id name for the thumbs
 * 'imagearea': (string) div id name for the images 
 * 'speed': (number) 0<=speed<=1 thumb scroll speed
+* 'autoScroll': (boolean) default = false 
 
 e.g.
 
