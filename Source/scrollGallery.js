@@ -74,13 +74,22 @@ var scrollGallery = new Class({
 				this.scrollthumbareaFx = new Fx.Scroll(this.options.thumbarea,{
 					'duration': 300*this.options.speed*scrollSize.x/2,
 					'transition': Fx.Transitions.linear, 
+					'link': 'ignore',
 					onComplete: function(){
 				       	this.scrollthumbareaFx.set(0,0);
+						this.scrollthumbareaFx.start(scrollTo,'x');
+				    }.bind(this),
+					onCancel: function(){
+				       	var scrollTo = $(this.options.thumbarea).getScrollSize().x;
 						this.scrollthumbareaFx.start(scrollTo,'x');
 				    }.bind(this)
 				});
 				this.scrollthumbareaFx.set(0,0);
-				this.scrollthumbareaFx.start(scrollTo,'x');			
+				this.scrollthumbareaFx.start(scrollTo,'x');
+				$(this.options.thumbarea).addEvent('mouseenter', function(){//little backup fix
+					var scrollTo = $(this.options.thumbarea).getScrollSize().x;
+					this.scrollthumbareaFx.start(scrollTo,'x');
+				}.bind(this));	
 			}
 		}else{
 			alert('Missing thumbarea');
