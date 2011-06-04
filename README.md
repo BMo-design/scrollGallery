@@ -102,6 +102,7 @@ Captions
 
 If you want to add a caption below your images, you can do this very easily.
 First you have to set up the HTML-structure in this way.
+
 	#HTML
 	<div id="imagearea">
 	  <div id="imageareaContent">
