@@ -95,3 +95,52 @@ Events
 Contact
 ----------
 Please contact me (info@BMo-design.de) if you have any suggestions or comments.
+
+
+Captions
+----------
+
+If you want to add a caption below your images, you can do this very easily.
+First you have to set up the HTML-structure in this way.
+	#HTML
+	<div id="imagearea">
+	  <div id="imageareaContent">
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image1.jpg" alt="" /></div>
+            <div class="caption_container"><div>My caption</div><img  src="fotos/image2.jpg" alt="" /></div>
+            <div class="caption_container"><div>Me</div><img  src="fotos/image3.jpg" alt="" /></div>
+            <div class="caption_container"><div>Paul</div><img  src="fotos/image4.jpg" alt="" /></div>
+            <div class="caption_container"><div>...</div><img  src="fotos/image5.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image6.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image7.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image8.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image9.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image10.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image11.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image12.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image13.jpg" alt="" /></div>
+            <div class="caption_container"><div>A nice picture</div><img  src="fotos/image14.jpg" alt="" /></div>   
+      </div> 
+	</div>
+
+Then you need to add some CSS:
+
+	#CSS
+	/*Caption Version*/
+	#imageareaContent .caption_container{
+		position:relative;
+		display:inline;
+	}
+	#imageareaContent .caption_container div{
+		position:absolute;
+		display:inline;
+		padding:5px 10px 5px 10px;
+		background-color:#fff;
+		margin-top:-15px;
+		z-index:auto;
+		top:0px;
+		left:0px;
+		font-family:"Arial";
+		font-size:14px;
+	}
+	
+
