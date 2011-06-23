@@ -73,6 +73,7 @@ Options
 * 'thumbarea': (string) div id name for the thumbs
 * 'imagearea': (string) div id name for the images 
 * 'speed': (number) 0<=speed<=1 thumb scroll speed
+* 'clickable': (boolean) default = true
 * 'autoScroll': (boolean) default = false 
 
 e.g.
