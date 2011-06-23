@@ -27,6 +27,7 @@ var scrollGallery = new Class({
 		'thumbarea': 'thumbarea',
 		'imagearea': 'imagearea',
 		'speed': 0.1,
+		'clickable': true,
 		'autoScroll': false
         /* Events...*/
 	},
@@ -100,6 +101,18 @@ var scrollGallery = new Class({
 			$(this.options.imagearea).setStyle('overflow-x', 'hidden');
 			// init imgObjs
 			this.imgObjs=$(this.options.imagearea).getElements('img');
+			if(this.options.clickable){
+				$('imageareaContent').setStyle('cursor', 'pointer');
+				Array.each(this.imgObjs, function(imgObjekt, index){
+					imgObjekt.addEvent('click', function(index){	
+						if(index+1>=this.imgObjs.length){
+							this.scrollimageareaFx.toElement(this.imgObjs[0]);
+						}else{
+							this.scrollimageareaFx.toElement(this.imgObjs[index+1]);
+						}
+					}.bind(this).pass(index));
+				}.bind(this));
+			}
         }else{
 			alert('Missing imagearea');
 		}
