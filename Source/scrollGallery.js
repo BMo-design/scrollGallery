@@ -102,7 +102,7 @@ var scrollGallery = new Class({
 			// init imgObjs
 			this.imgObjs=$(this.options.imagearea).getElements('img');
 			if(this.options.clickable){
-				$('imageareaContent').setStyle('cursor', 'pointer');
+				$(this.options.imagearea).getElement('div').setStyle('cursor', 'pointer');
 				Array.each(this.imgObjs, function(imgObjekt, index){
 					imgObjekt.addEvent('click', function(index){	
 						if(index+1>=this.imgObjs.length){
