@@ -143,6 +143,7 @@ Then you need to add some CSS:
 		left:0px;
 		font-family:"Arial";
 		font-size:14px;
+		line-height:14px;
 	}
 	
 
