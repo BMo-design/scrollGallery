@@ -40,7 +40,7 @@ var scrollGallery = new Class({
 		this.imgObjs=null;
 				
 		//FX
-		this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea);
+		this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea,{wheelStops: false});
 		//AutoScroll
         //init Thumb-Images
 		if($(this.options.thumbarea)){
