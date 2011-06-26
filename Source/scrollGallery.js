@@ -118,6 +118,6 @@ var scrollGallery = new Class({
 		}
 
 		//check
-		if(this.imgObjs.length!=this.tumbObjs.length) alert("Error: The number of images do not match!");
+		if(this.imgObjs.length!=this.tumbObjs.length) alert("Error: The number of images does not match!");
 	}
 });
