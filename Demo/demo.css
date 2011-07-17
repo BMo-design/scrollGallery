@@ -1,9 +1,6 @@
 #gallery{
 	position:relative;/*has to be postion:relativ or static*/
     width:800px; /*change this*/
-	
-	margin:0px;
-	padding:0px;
 	font-family:"Arial";
 	font-size:14px;
 	line-height:20px;
@@ -12,6 +9,11 @@
     width:770px; /*change this*/
 }
 
+/*scrollGallery Design*/
+#gallery{
+	margin:0px;
+	padding:0px;
+}
 
 #scrollGalleryHead{
 	padding:10px 10px 0px 10px;
@@ -20,7 +22,7 @@
 }
 
 #scrollGalleryFoot{
-	padding:10px;
+	padding:10px 10px 0px 10px;
 	margin-top:5px;
     background-color:#333333;
 }
@@ -36,9 +38,6 @@
 	border-bottom: 4px solid #333333;
 }
 #thumbareaContent{
-	padding-left:0px; 
-	padding-right:0px; 
-	margin:0px; 
  	white-space: nowrap;       /* important */	
 }
 #thumbareaContent img{
@@ -55,18 +54,16 @@
 	width:100%; 
 	margin:0px; 
 	padding:0px;
+	border-bottom: 4px solid #333333;
 }
 #imageareaContent{
-	padding-left:0px; 
-	padding-right:0px; 
-	margin:0px; 
  	white-space: nowrap;       /* important */
-    margin-bottom:-5px;
 }
 #imageareaContent img{
     margin:0px;
-	margin-right:15px;
+	padding:0px;
     border: 3px solid #ffffff;
+	display:inline;
 }
 
 /*Caption Version*/
@@ -84,4 +81,5 @@
 	z-index:auto;
 	top:0px;
 	left:0px;
+	line-height:14px;
 }
