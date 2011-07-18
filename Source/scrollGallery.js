@@ -60,40 +60,42 @@ var scrollGallery = null;
 				}.bind(this));
 				
 				//scrollEvents
-				if(this.options.autoScroll==false){
-					this.scrollthumbareaFx = new Scroller($(this.options.thumbarea), {area: this.options.area, velocity: this.options.speed, direction: "x"});
-					$(this.options.thumbarea).setStyle('overflow-x', 'hidden');
-					// Thumb Events
-					$(this.options.thumbarea).addEvent('mouseenter', this.scrollthumbareaFx.start.bind(this.scrollthumbareaFx));
-					$(this.options.thumbarea).addEvent('mouseleave', this.scrollthumbareaFx.stop.bind(this.scrollthumbareaFx));
-				}else{
-					$(this.options.thumbarea).setStyle('overflow-x', 'hidden');
-					var scrollSize = $(this.options.thumbarea).getScrollSize();
-					var scrollTo = scrollSize.x;
-					var firstImage =  this.tumbObjs[0];
-					Array.each(this.tumbObjs, function(imgObjekt, index){
-						firstImage.getParent().adopt(imgObjekt.clone().cloneEvents(imgObjekt));
-					});
-		
-					this.scrollthumbareaFx = new Fx.Scroll(this.options.thumbarea,{
-						'duration': 300*this.options.speed*scrollSize.x/2,
-						'transition': Fx.Transitions.linear, 
-						'link': 'ignore',
-						onComplete: function(){
-							this.scrollthumbareaFx.set(0,0);
-							this.scrollthumbareaFx.start(scrollTo,'x');
-						}.bind(this),
-						onCancel: function(){
+				if($(this.options.thumbarea).getScrollSize().x>$(this.options.thumbarea).getSize().x){//check if scrollable
+					if(this.options.autoScroll==false){
+						this.scrollthumbareaFx = new Scroller($(this.options.thumbarea), {area: this.options.area, velocity: this.options.speed, direction: "x"});
+						$(this.options.thumbarea).setStyle('overflow-x', 'hidden');
+						// Thumb Events
+						$(this.options.thumbarea).addEvent('mouseenter', this.scrollthumbareaFx.start.bind(this.scrollthumbareaFx));
+						$(this.options.thumbarea).addEvent('mouseleave', this.scrollthumbareaFx.stop.bind(this.scrollthumbareaFx));
+					}else{
+						$(this.options.thumbarea).setStyle('overflow-x', 'hidden');
+						var scrollSize = $(this.options.thumbarea).getScrollSize();
+						var scrollTo = scrollSize.x;
+						var firstImage =  this.tumbObjs[0];
+						Array.each(this.tumbObjs, function(imgObjekt, index){
+							firstImage.getParent().adopt(imgObjekt.clone().cloneEvents(imgObjekt));
+						});
+			
+						this.scrollthumbareaFx = new Fx.Scroll(this.options.thumbarea,{
+							'duration': 300*this.options.speed*scrollSize.x/2,
+							'transition': Fx.Transitions.linear, 
+							'link': 'ignore',
+							onComplete: function(){
+								this.scrollthumbareaFx.set(0,0);
+								this.scrollthumbareaFx.start(scrollTo,'x');
+							}.bind(this),
+							onCancel: function(){
+								var scrollTo = $(this.options.thumbarea).getScrollSize().x;
+								this.scrollthumbareaFx.start(scrollTo,'x');
+							}.bind(this)
+						});
+						this.scrollthumbareaFx.set(0,0);
+						this.scrollthumbareaFx.start(scrollTo,'x');
+						$(this.options.thumbarea).addEvent('mouseenter', function(){//little backup fix
 							var scrollTo = $(this.options.thumbarea).getScrollSize().x;
 							this.scrollthumbareaFx.start(scrollTo,'x');
-						}.bind(this)
-					});
-					this.scrollthumbareaFx.set(0,0);
-					this.scrollthumbareaFx.start(scrollTo,'x');
-					$(this.options.thumbarea).addEvent('mouseenter', function(){//little backup fix
-						var scrollTo = $(this.options.thumbarea).getScrollSize().x;
-						this.scrollthumbareaFx.start(scrollTo,'x');
-					}.bind(this));	
+						}.bind(this));	
+					}
 				}
 			}else{
 				alert('Missing thumbarea');
