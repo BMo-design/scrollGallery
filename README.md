@@ -76,6 +76,7 @@ Options
 * 'speed': (number) 0<=speed<=1 thumb scroll speed
 * 'clickable': (boolean) default = true
 * 'autoScroll': (boolean) default = false 
+* 'toElementClass': (string) default = null, for container around the images. E.g. caption_container
 
 e.g.
 
@@ -125,7 +126,7 @@ First you have to set up the HTML-structure in this way.
       </div> 
 	</div>
 
-Then you need to add some CSS:
+Then you need to add some CSS, see the demo.css:
 
 	#CSS
 	/*Caption Version*/
@@ -146,5 +147,9 @@ Then you need to add some CSS:
 		font-size:14px;
 		line-height:14px;
 	}
-	
+
+
+If you want, you can set toElementClass: '.caption_container' in JS.
+
+I also wrote a	wordpress plugin: http://wordpress.org/extend/plugins/nextgen-gallery/
 
