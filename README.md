@@ -151,5 +151,5 @@ Then you need to add some CSS, see the demo.css:
 
 If you want, you can set toElementClass: '.caption_container' in JS.
 
-I also wrote a	wordpress plugin: http://wordpress.org/extend/plugins/nextgen-gallery/
+More information you will find at: http://software.bmo-design.de/scrollgallery/
 
