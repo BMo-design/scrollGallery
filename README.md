@@ -76,7 +76,7 @@ Options
 * 'speed': (number) 0<=speed<=1 thumb scroll speed
 * 'clickable': (boolean) default = true
 * 'autoScroll': (boolean) default = false 
-* 'toElementClass': (string) default = null, for container around the images. E.g. caption_container
+* 'toElementClass': (string) default = null, for container around the images e.g. .caption_container
 
 e.g.
 
