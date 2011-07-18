@@ -31,7 +31,8 @@ var scrollGallery = null;
 			'imagearea': 'imagearea',
 			'speed': 0.1,
 			'clickable': true,
-			'autoScroll': false
+			'autoScroll': false,
+			'toElementClass': null
 			/* Events...*/
 		},
 	  
@@ -105,6 +106,11 @@ var scrollGallery = null;
 				$(this.options.imagearea).setStyle('overflow', 'hidden');
 				$(this.options.imagearea).setStyle('overflow-x', 'hidden');
 				// init imgObjs
+				if(this.options.toElementClass!=null){
+				     this.imgObjs=$(this.options.imagearea).getElements(this.options.toElementClass.toString());
+				}else{
+				     this.imgObjs=$(this.options.imagearea).getElements('img');
+				}
 				this.imgObjs=$(this.options.imagearea).getElements('img');
 				if(this.options.clickable){
 					$(this.options.imagearea).getElement('div').setStyle('cursor', 'pointer');
