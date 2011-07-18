@@ -151,5 +151,5 @@ Then you need to add some CSS, see the demo.css:
 
 If you want, you can set toElementClass: '.caption_container' in JS.
 
-More information you will find at: http://software.bmo-design.de/scrollgallery/
+More information you will find at: http://software.bmo-design.de/scrollgallery.html
 
