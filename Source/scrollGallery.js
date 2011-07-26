@@ -42,7 +42,12 @@ var scrollGallery = null;
 			
 			this.tumbObjs=null;
 			this.imgObjs=null;
-					
+			
+			//Workaround
+			if((Browser.safari||Browser.chrome)&&this.safariWorkaround!=true){
+				this.safariWorkaround=true;
+				this.initialize.delay(1000, this,options);
+			}		
 			//FX
 			this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea,{wheelStops: false});
 			//AutoScroll
