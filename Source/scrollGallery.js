@@ -52,22 +52,26 @@ var scrollGallery = null;
 				}.bind(this));
 			}		
 			//FX
-			this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea,{wheelStops: false});
+			if($(this.options.imagearea)){
+			       this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea,{wheelStops: false});
+			}
 			//AutoScroll
 			//init Thumb-Images
 			if($(this.options.thumbarea)){
 				// init tumbObjs
 				this.tumbObjs = $(this.options.thumbarea).getElements('img');
-				Array.each(this.tumbObjs, function(imgObjekt, index){
-					imgObjekt.addEvent('click', function(index){	
-						this.scrollimageareaFx.toElement(this.imgObjs[index]);
-					}.bind(this).pass(index));
-				
-					if(index==this.options.start){
-						imgObjekt.fireEvent('click',this,10);//delay for safari
-					}
-				}.bind(this));
-				
+				if($(this.options.imagearea)){
+					Array.each(this.tumbObjs, function(imgObjekt, index){
+						imgObjekt.addEvent('click', function(index){	
+							this.scrollimageareaFx.toElement(this.imgObjs[index]);
+						}.bind(this).pass(index));
+					
+						if(index==this.options.start){
+							imgObjekt.fireEvent('click',this,10);//delay for safari
+						}
+					}.bind(this));
+				}
+
 				//scrollEvents
 				if($(this.options.thumbarea).getScrollSize().x>$(this.options.thumbarea).getSize().x){//check if scrollable
 					if(this.options.autoScroll==false){
