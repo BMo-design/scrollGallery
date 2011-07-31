@@ -46,7 +46,10 @@ var scrollGallery = null;
 			//Workaround
 			if((Browser.safari||Browser.chrome)&&this.safariWorkaround!=true){
 				this.safariWorkaround=true;
-				this.initialize.delay(1000, this,options);
+				
+				window.addEvent('load', function() {
+				  this.initialize.delay(10, this, options);
+				}.bind(this));
 			}		
 			//FX
 			this.scrollimageareaFx = new Fx.Scroll(this.options.imagearea,{wheelStops: false});
